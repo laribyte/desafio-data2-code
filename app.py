@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import kagglehub
+import os
 
 st.set_page_config(page_title="Nur Mah Museum - Dashboard", page_icon="🏛️", layout="wide")
 
@@ -11,9 +13,14 @@ st.markdown("Este painel interativo apresenta a análise de distribuição de mu
 # Carregar os dados (usando cache para ficar rápido)
 @st.cache_data
 def carregar_dados():
-    # URL pública direta que o Streamlit consegue ler sem precisar de login/autenticação
-    url = "https://raw.githubusercontent.com/fivethirtyeight/data/master/museums/museums.csv"
-    df = pd.read_csv(url, low_memory=False)
+    # 1. Baixa o dataset do Kaggle de forma oficial
+    pasta_dataset = kagglehub.dataset_download("imls/museum-directory")
+    
+    # 2. Encontra o arquivo museums.csv dentro da pasta baixada
+    caminho_csv = os.path.join(pasta_dataset, "museums.csv")
+    
+    # 3. Carrega o dataframe
+    df = pd.read_csv(caminho_csv, low_memory=False)
     df = df.drop_duplicates()
     
     # Preencher nulos da Receita com a mediana por tipo
