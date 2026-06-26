@@ -20,7 +20,9 @@ A análise foi desenvolvida em Python dentro de um ambiente Jupyter Notebook, ut
 3. **Identificação de Outliers:** Através de um gráfico de caixa (Boxplot), provou-se a existência de discrepâncias gritantes que chegam à escala de 6 bilhões de dólares ($6 \times 10^9$), o que validou a escolha da Mediana como métrica central.
 
 ## 4. Dificuldades Encontradas e Melhorias Futuras
-* **Dificuldade:** A presença de dados de tipos mistos (*mixed types*) nas colunas de códigos postais e identificadores exigiu o ajuste fino de parâmetros de leitura do Pandas (`low_memory=False`).
+* **Dificuldade de Engenharia de Dados:** A presença de dados de tipos mistos (*mixed types*) nas colunas de códigos postais e identificadores exigiu o ajuste fino de parâmetros de leitura do Pandas (`low_memory=False`) para evitar perda de performance e alertas de compilação.
+* **Dificuldade de Modelagem (Machine Learning):** A alta variabilidade e a presença de outliers legítimos na coluna de receitas tornaram o aprendizado do modelo preditivo extremamente complexo, resultando em um score R² baixo (3.9%). Essa barreira foi superada ao interpretar criticamente a métrica através do MAE em vez de RMSE, compreendendo que o faturamento do setor sofre influências de fatores externos que não constavam no dataset original.
+
 * **Melhorias Futuras:** Como passos incrementais, sugere-se a automação da extração de outliers severos da base e a criação de uma aplicação analítica web interativa (Data App com Streamlit) para que a diretoria possa filtrar dados por estados americanos em tempo real.
 
 ## 5. Conclusão
