@@ -11,11 +11,12 @@ st.markdown("Este painel interativo apresenta a análise de distribuição de mu
 # Carregar os dados (usando cache para ficar rápido)
 @st.cache_data
 def carregar_dados():
-    # Carrega o CSV original e aplica o saneamento rápido
-    df = pd.read_csv("dados/museums.csv", low_memory=False)
+    # Lendo direto do link público para funcionar na nuvem sem precisar do arquivo local
+    url = "https://raw.githubusercontent.com/fivethirtyeight/data/master/museums/museums.csv"
+    df = pd.read_csv(url, low_memory=False)
     df = df.drop_duplicates()
     
-    # Preenche nulos da Receita com a mediana por tipo
+    # Preencher nulos da Receita com a mediana por tipo
     medianas = df.groupby('Museum Type')['Revenue'].transform('median')
     df['Revenue'] = df['Revenue'].fillna(medianas)
     return df
