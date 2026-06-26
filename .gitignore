@@ -1,0 +1,11 @@
+# Ignorar a pasta com a base de dados pesada do Kaggle
+dados/
+museums.csv
+
+# Ignorar arquivos temporários inúteis do Jupyter Notebook
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Ignorar arquivos de sistema do Windows
+Thumbs.db
+desktop.ini 
