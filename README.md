@@ -2,8 +2,6 @@
 
 ## Projeto: Inteligência de Mercado e Benchmarking para o Nur Mah Museum
 
-> ** Diferencial Técnico:** O projeto conta com um Dashboard interativo publicado na nuvem. Acesse os dados em tempo real aqui: **[Visualizar Dashboard Interativo](COLE_O_SEU_LINK_DO_STREAMLIT_AQUI)**
-
 Este repositório contém a resolução do **Desafio DATA2** do processo de Onboarding Técnico da CODE[] Jr.. O objetivo do projeto é realizar um estudo analítico sobre o panorama das organizações culturais e museus nos Estados Unidos para fundamentar as próximas decisões estratégicas de captação de recursos e parcerias da diretoria executiva do **Nur Mah Museum**.
 
 ## Tecnologias Utilizadas
@@ -20,7 +18,7 @@ O projeto está organizado na seguinte estrutura de arquivos, seguindo as boas p
 desafio-data2-code/
 ├── .gitignore            # Filtro para impedir o envio de arquivos pesados ao GitHub
 ├── README.md             # Documentação principal com instruções de execução
-├── analise_museus.ipynb  # Jupyter Notebook com o pipeline de dados e gráficos salvos
+├── analise_museus.ipynb  # Jupyter Notebook com o pipeline de dados e gráficos gerados
 └── dados/                # Diretório local contendo a base de dados (ignorado pelo Git)
 ```
 
@@ -53,7 +51,7 @@ cd desafio-data2-code
 
 2. Instalar as Dependências Obrigatórias:
 ```bash
-pip install pandas matplotlib seaborn notebook
+pip install pandas matplotlib seaborn scikit-learn notebook
 ```
 3. Baixar o Dataset:
 

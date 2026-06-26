@@ -23,8 +23,6 @@ A análise foi desenvolvida em Python dentro de um ambiente Jupyter Notebook, ut
 * **Dificuldade de Engenharia de Dados:** A presença de dados de tipos mistos (*mixed types*) nas colunas de códigos postais e identificadores exigiu o ajuste fino de parâmetros de leitura do Pandas (`low_memory=False`) para evitar perda de performance e alertas de compilação.
 * **Dificuldade de Modelagem (Machine Learning):** A alta variabilidade e a presença de outliers legítimos na coluna de receitas tornaram o aprendizado do modelo preditivo extremamente complexo, resultando em um score R² baixo (3.9%). Essa barreira foi superada ao interpretar criticamente a métrica através do MAE em vez de RMSE, compreendendo que o faturamento do setor sofre influências de fatores externos que não constavam no dataset original.
 
-**Deploy de Dashboard Interativo:** Como passo incremental de altíssimo valor para o negócio, foi realizado com sucesso o deploy de uma aplicação analítica web interativa utilizando Streamlit. O painel permite que a diretoria filtre os dados por estados americanos em tempo real, disponível publicamente no link: [COLE_O_SEU_LINK_DO_STREAMLIT_AQUI]
-
 ## 5. Conclusão
 O estudo aponta que os estados de CA e NY apresentam excelentes oportunidades de público e investidores para o Nur Mah Museum, desde que a instituição esteja preparada para enfrentar a maior densidade competitiva do país. Além disso, todo o planejamento orçamentário deve basear-se em medianas amostrais para mitigar o risco financeiro gerado pela distorção dos outliers bilionários de mercado.
 
@@ -36,7 +34,7 @@ O algoritmo escolhido para o desafio foi a **Árvore de Decisão**. A escolha ju
 * O mercado de museus apresenta uma assimetria extrema (outliers bilionários convivendo com microinstituições). Modelos lineares puros (como a Regressão Linear) sofrem severamente com a distorção desses outliers. A Árvore de Decisão lida melhor com essa distribuição caótica ao segmentar os dados em "regras de decisão" sucessivas, isolando os extremos de forma mais eficiente.
 
 ### B. Pipeline de Pré-processamento e Variáveis Categóricas
-* **One-Hot Encoding (`pd.get_dummies`):** Como o Scikit-Learn exige entradas puramente numéricas, as variáveis qualitativas `Museum Type` e `State` foram codificadas. Utilizou-se o One-Hot Encoding para criar colunas binárias (0 ou 1) para cada categoria, permitindo que o modelo interprete o impacto do impacto geográfico e da tipologia na receita sem criar uma hierarquia falsa de valores.
+* **One-Hot Encoding (`pd.get_dummies`):** Como o Scikit-Learn exige entradas puramente numéricas, as variáveis qualitativas `Museum Type` e `State` foram codificadas. Utilizou-se o One-Hot Encoding para criar colunas binárias (0 ou 1) para cada categoria, permitindo que o modelo interprete o impacto geográfico e da tipologia na receita sem criar uma hierarquia falsa de valores.
 
 ### C. Justificativa e Análise Crítica das Métricas de Erro
 O modelo registrou um **MAE de $26,824,264.23** e um **R² de 0.0389**.
