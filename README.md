@@ -2,6 +2,8 @@
 
 ## Projeto: Inteligência de Mercado e Benchmarking para o Nur Mah Museum
 
+> ** Diferencial Técnico:** O projeto conta com um Dashboard interativo publicado na nuvem. Acesse os dados em tempo real aqui: **[Visualizar Dashboard Interativo](COLE_O_SEU_LINK_DO_STREAMLIT_AQUI)**
+
 Este repositório contém a resolução do **Desafio DATA2** do processo de Onboarding Técnico da CODE[] Jr.. O objetivo do projeto é realizar um estudo analítico sobre o panorama das organizações culturais e museus nos Estados Unidos para fundamentar as próximas decisões estratégicas de captação de recursos e parcerias da diretoria executiva do **Nur Mah Museum**.
 
 ## Tecnologias Utilizadas
