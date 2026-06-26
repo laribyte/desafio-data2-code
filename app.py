@@ -11,7 +11,7 @@ st.markdown("Este painel interativo apresenta a análise de distribuição de mu
 # Carregar os dados (usando cache para ficar rápido)
 @st.cache_data
 def carregar_dados():
-    # Lendo direto do link público para funcionar na nuvem sem precisar do arquivo local
+    # URL pública direta que o Streamlit consegue ler sem precisar de login/autenticação
     url = "https://raw.githubusercontent.com/fivethirtyeight/data/master/museums/museums.csv"
     df = pd.read_csv(url, low_memory=False)
     df = df.drop_duplicates()
